@@ -73,7 +73,7 @@ export default function Assets() {
               okButtonProps={{
                 className: 'bg-[#4096ff]',
               }}
-              description="Você tem certeza que deseja excluir esta unidade?"
+              description="Você tem certeza que deseja excluir este ativo?"
             >
               <Button type="link" className="inline-flex p-0 h-fit hover:text-[#1677ff]">
                 <DeleteOutlined />
