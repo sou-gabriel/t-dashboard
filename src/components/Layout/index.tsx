@@ -16,15 +16,13 @@ export default function AppLayout() {
   return (
     <Layout className="h-screen">
       <Sider trigger={null} className="px-6 py-14">
-        <Link to="/">
-          <img src={logo} alt="Tractian" className="mb-6" />
-        </Link>
+        <img src={logo} alt="Tractian" className="mb-6" />
 
         <Menu
           theme="dark"
           mode="vertical"
           selectedKeys={[selectedKey]}
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={['assets']}
           items={[
             {
               key: 'assets',
