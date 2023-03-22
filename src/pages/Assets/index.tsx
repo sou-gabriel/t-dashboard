@@ -1,5 +1,5 @@
 import { useQueryClient } from '@tanstack/react-query';
-import { DeleteOutlined, EyeOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, EyeOutlined } from '@ant-design/icons';
 import {
   Button,
   Card, message, Popconfirm, Space, Spin, Statistic, Table, Typography,
@@ -58,8 +58,12 @@ export default function Assets() {
       render(_, { id }: Asset) {
         return (
           <Space size="middle">
-            <Link to={`/assets/${id}`} className="text-[#1677ff]">
+            <Link to={`/assets/${id}`} className="text-[#1677ff] inline-flex">
               <EyeOutlined />
+            </Link>
+
+            <Link to={`/assets/edit/${id}`} className="text-[#1677ff] inline-flex">
+              <EditOutlined />
             </Link>
 
             <Popconfirm
@@ -71,7 +75,7 @@ export default function Assets() {
               }}
               description="Você tem certeza que deseja excluir esta unidade?"
             >
-              <Button type="link" className="hover:text-[#1677ff]">
+              <Button type="link" className="inline-flex p-0 h-fit hover:text-[#1677ff]">
                 <DeleteOutlined />
               </Button>
             </Popconfirm>
