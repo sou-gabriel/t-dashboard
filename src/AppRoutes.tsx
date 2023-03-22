@@ -20,7 +20,7 @@ export default function AppRoutes() {
         <Route path="/units" element={<Units />} />
         <Route path="/companies" element={<Companies />} />
         <Route path="*" element={<NotFound />} />
-        <Route index element={<Asset />} />
+        <Route index element={<Assets />} />
       </Route>
     </Routes>
   );
