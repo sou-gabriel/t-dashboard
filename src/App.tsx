@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import AppRoutes from './AppRoutes';
 
@@ -11,6 +12,7 @@ export default function App() {
       <BrowserRouter>
         <AppRoutes />
       </BrowserRouter>
+      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }
