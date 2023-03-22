@@ -48,7 +48,7 @@ export default function Companies() {
       title: 'Ações',
       dataIndex: 'action',
       key: 'action',
-      render(_, { id }: Unit) {
+      render(_: unknown, { id }: Unit) {
         return (
           <Popconfirm
             title="Excluir"
@@ -71,7 +71,7 @@ export default function Companies() {
   const dataSource = units?.map((unit) => ({
     id: unit.id,
     name: unit.name,
-  }));
+  })) as any[];
 
   return (
     <>

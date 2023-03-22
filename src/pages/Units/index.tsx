@@ -53,7 +53,7 @@ export default function Units() {
       title: 'Ações',
       dataIndex: 'action',
       key: 'action',
-      render(_, { id }: Unit) {
+      render(_: unknown, { id }: Unit) {
         return (
           <Popconfirm
             title="Excluir"
@@ -77,7 +77,7 @@ export default function Units() {
     id: unit.id,
     name: unit.name,
     company: unit.company.name || '-',
-  }));
+  })) as any[];
 
   return (
     <>

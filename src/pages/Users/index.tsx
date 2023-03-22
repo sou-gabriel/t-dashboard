@@ -63,7 +63,7 @@ export default function Users() {
       title: 'Ações',
       dataIndex: 'action',
       key: 'action',
-      render(_, { id }: User) {
+      render(_: unknown, { id }: User) {
         return (
           <Popconfirm
             title="Excluir"

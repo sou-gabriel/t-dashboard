@@ -55,7 +55,7 @@ export default function Assets() {
       title: 'Ações',
       dataIndex: 'action',
       key: 'action',
-      render(_, { id }: Asset) {
+      render(_: any, { id }: Asset) {
         return (
           <Space size="middle">
             <Link to={`/assets/${id}`} className="text-[#1677ff] inline-flex">
@@ -90,7 +90,7 @@ export default function Assets() {
     name: asset.name,
     model: capitalize(asset.model),
     status: getAssetVisualInfoBy(asset.status),
-  }));
+  })) || [] as any[];
 
   const assetsStatusSummary = {
     inAlert: data?.filter((asset) => asset.status === 'inAlert').length,
