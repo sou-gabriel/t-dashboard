@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 import useAssets from '../../services/hooks/useAssets';
 import Asset from '../../types/asset';
 import delay from '../../utils/delay';
+import getAssetVisualInfoBy from '../../utils/getAssetVisualInfoBy';
+import capitalize from '../../utils/capitalize';
 
 export default function Assets() {
   const queryClient = useQueryClient();
@@ -71,8 +73,8 @@ export default function Assets() {
   const dataSource = data?.map((asset) => ({
     id: asset.id,
     name: asset.name,
-    model: asset.model,
-    status: asset.status,
+    model: capitalize(asset.model),
+    status: getAssetVisualInfoBy(asset.status),
   }));
 
   const assetsStatusSummary = {
