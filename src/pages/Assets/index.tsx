@@ -2,7 +2,7 @@ import { useQueryClient } from '@tanstack/react-query';
 import { DeleteOutlined, EyeOutlined } from '@ant-design/icons';
 import {
   Button,
-  Card, message, Space, Spin, Statistic, Table, Typography,
+  Card, message, Popconfirm, Space, Spin, Statistic, Table, Typography,
 } from 'antd';
 
 import { Link } from 'react-router-dom';
@@ -32,6 +32,11 @@ export default function Assets() {
 
   const columns = [
     {
+      title: '#',
+      dataIndex: 'id',
+      key: 'id',
+    },
+    {
       title: 'Nome',
       dataIndex: 'name',
       key: 'name',
@@ -57,13 +62,19 @@ export default function Assets() {
               <EyeOutlined />
             </Link>
 
-            <Button
-              type="link"
-              className="hover:text-[#1677ff]"
-              onClick={() => handleDeleteAsset(id)}
+            <Popconfirm
+              title="Excluir"
+              cancelText="Cancelar"
+              onConfirm={() => handleDeleteAsset(id)}
+              okButtonProps={{
+                className: 'bg-[#4096ff]',
+              }}
+              description="Você tem certeza que deseja excluir esta unidade?"
             >
-              <DeleteOutlined />
-            </Button>
+              <Button type="link" className="hover:text-[#1677ff]">
+                <DeleteOutlined />
+              </Button>
+            </Popconfirm>
           </Space>
         );
       },
