@@ -6,6 +6,7 @@ import Asset from './pages/Asset';
 import Users from './pages/Users';
 import Units from './pages/Units';
 import Companies from './pages/Companies';
+import NotFound from './pages/404';
 
 export default function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ export default function AppRoutes() {
         <Route path="/users" element={<Users />} />
         <Route path="/units" element={<Units />} />
         <Route path="/companies" element={<Companies />} />
+        <Route path="*" element={<NotFound />} />
         <Route index element={<Asset />} />
       </Route>
     </Routes>
