@@ -2,6 +2,7 @@
 
 ### Techs
 - React
+- AntD
 - TailwindCSS
 - Highcharts
 - React Query
